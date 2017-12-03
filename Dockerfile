@@ -5,12 +5,11 @@ WORKDIR $GOPATH/src/github.com/sylr/alertmanager-splunkbot
 
 RUN apk update && apk upgrade && apk add --no-cache git
 
-RUN uname -a
-RUN go version
-RUN git describe --dirty --broken
+RUN git fetch --unshallow
+RUN git describe --dirty --tags
 
 RUN go get -v ./...
-RUN go build -ldflags "-X main.version=$(git describe --dirty --broken)"
+RUN go build -ldflags "-X main.version=$(git describe --dirty --tags)"
 RUN go install
 
 # -----------------------------------------------------------------------------
