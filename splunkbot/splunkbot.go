@@ -71,7 +71,6 @@ func (sbot Splunkbot) alert(w http.ResponseWriter, r *http.Request) {
 	buf, _ := ioutil.ReadAll(r.Body)
 	err := json.Unmarshal(buf, &data)
 
-	log.Debugf("buf: %v", buf)
 	// if buf is not valid json we cast it as string
 	if err != nil {
 		message.Event = interface{}(string(buf))
@@ -89,12 +88,6 @@ func (sbot Splunkbot) alert(w http.ResponseWriter, r *http.Request) {
 		message.Host = u.Hostname()
 		message.Source = strings.TrimLeft(u.Path, "/")
 	}
-
-	// The object stored in the "Alerts" key is also stored as
-	// a map[string]interface{} type, and its type is asserted from
-	// the interface{} type
-	message.Event=  data["Alerts"].(map[string]interface{})
-	log.Debugf("message.Event: ", message.Event)
 
 	j, _ := json.Marshal(message)
 	jr := bytes.NewReader(j)
