@@ -1,7 +1,7 @@
 FROM golang:1.10-alpine3.7 as builder
 
-ADD . $GOPATH/src/github.com/sylr/alertmanager-splunkbot
-WORKDIR $GOPATH/src/github.com/sylr/alertmanager-splunkbot
+ADD . $GOPATH/src/github.com/polarpoint-io/alertmanager-splunkbot
+WORKDIR $GOPATH/src/github.com/polarpoint-io/alertmanager-splunkbot
 
 RUN apk update && apk upgrade && apk add --no-cache git
 

@@ -11,7 +11,21 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"time"
+	//"github.com/prometheus/client_golang/api"
+	//"github.com/prometheus/alertmanager/config"
+	//"github.com/prometheus/alertmanager/types"
+
 )
+
+// LabelSet represents a collection of label names and values as a map.
+type LabelSet map[LabelName]LabelValue
+
+// LabelName represents the name of a label.
+type LabelName string
+
+// LabelValue represents the value of a label.
+type LabelValue string
 
 type SpunkHECMessage struct {
 	Time       string      `json:"time,omitempty"`
@@ -20,6 +34,14 @@ type SpunkHECMessage struct {
 	Sourcetype string      `json:"sourcetype,omitempty"`
 	Index      string      `json:"index,omitempty"`
 	Event      interface{} `json:"event"`
+}
+
+type Alert struct {
+	Labels       LabelSet  `json:"labels"`
+	Annotations  LabelSet  `json:"annotations"`
+	StartsAt     time.Time `json:"startsAt,omitempty"`
+	EndsAt       time.Time `json:"endsAt,omitempty"`
+	GeneratorURL string    `json:"generatorURL"`
 }
 
 type Splunkbot struct {
@@ -42,31 +64,39 @@ func (sbot Splunkbot) Serve() error {
 func (sbot Splunkbot) alert(w http.ResponseWriter, r *http.Request) {
 	log.Debugf("New request: %v", r)
 
-	var alert map[string]interface{}
+	var data map[string]interface{}
+	var alert Alert
 	var message SpunkHECMessage
 
 	// Decode input
 	buf, _ := ioutil.ReadAll(r.Body)
-	err := json.Unmarshal(buf, &alert)
+	err := json.Unmarshal(buf, &data)
 
+	log.Debugf("buf: %v", buf)
 	// if buf is not valid json we cast it as string
 	if err != nil {
 		message.Event = interface{}(string(buf))
 	} else {
-		message.Event = alert
+		message.Event = data
 	}
 
+	log.Debugf("message.Event: ", message.Event)
 	// Splunk Message
 	message.Sourcetype = sbot.SplunkSourcetype
 	message.Index = sbot.SplunkIndex
 
-	if value, ok := alert["externalURL"]; ok {
+	if value, ok := data["externalURL"]; ok {
 		u, _ := url.Parse(value.(string))
 		message.Host = u.Hostname()
 		message.Source = strings.TrimLeft(u.Path, "/")
 	}
 
-	// HTTP Splunk request
+	// The object stored in the "Alerts" key is also stored as
+	// a map[string]interface{} type, and its type is asserted from
+	// the interface{} type
+	message.Event=  data["Alerts"].(map[string]interface{})
+	log.Debugf("message.Event: ", message.Event)
+
 	j, _ := json.Marshal(message)
 	jr := bytes.NewReader(j)
 
