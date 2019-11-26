@@ -65,7 +65,6 @@ func (sbot Splunkbot) alert(w http.ResponseWriter, r *http.Request) {
 	log.Debugf("New request: %v", r)
 
 	var data map[string]interface{}
-	var alert Alert
 	var message SpunkHECMessage
 
 	// Decode input
