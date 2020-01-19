@@ -1,0 +1,220 @@
+
+/*
+ * This is a microservice e-commerce store sample with Gateway and three microservice applications
+ * This uses Istio for native kubernetes service discovery and JWT authentication
+ * This also creates the required Kubernetes deployment manifests and Istio routes
+ */
+ 
+application {
+  config {
+    baseName hah
+    applicationType gateway
+    packageName io.polarpoint.store
+    serviceDiscoveryType no
+    authenticationType jwt
+    prodDatabaseType postgresql
+    cacheProvider hazelcast
+    buildTool gradle
+    clientFramework react
+    useSass true
+    testFrameworks [cucumber]
+  }
+  entities *
+}
+
+
+application {
+  config {
+    baseName product
+    applicationType microservice
+    packageName io.polarpoint.product
+    serviceDiscoveryType no
+    authenticationType jwt
+    prodDatabaseType postgresql
+    buildTool gradle
+    serverPort 8081
+  }
+  entities Product,Rulez, Category, SubscriptionGroup, Branch , Field, Category, Page, Token, VatRate
+}
+
+application {
+  config {
+    baseName basket
+    applicationType microservice
+    packageName io.polarpoint.invoice
+    serviceDiscoveryType no
+    authenticationType jwt
+    prodDatabaseType postgresql
+    buildTool gradle
+    serverPort 8082
+  }
+  entities Basket, BasketEntry, VatAnalysis
+}
+
+
+/**
+ * Entities for Gateway
+ */
+
+// Branch 
+entity Branch {
+    branchAddress String required
+    fad String required
+    id Long required 
+    name String required
+}
+
+service Branch with serviceClass
+
+entity SubscriptionGroup {
+    id Long required 
+    name String required
+}
+
+entity Category {
+    id Long required 
+    deviceRestrictions String required
+}
+
+relationship OneToMany {
+	SubscriptionGroup{SubscriptionGroup(id) required} to Category
+}
+
+relationship OneToMany {
+	SubscriptionGroup{SubscriptionGroup(id) required} to  Branch
+}
+
+/**
+ * Entities for product Catalogue microservice
+ */
+
+
+// Product
+entity Product {
+	additionalReceipts String required
+    client Long required
+    name String required
+    description String
+    paymentType String 
+    type String
+    vatCode String
+}
+
+entity Token {
+    clientAccountName String required
+    clientId Long
+    iin Long  
+    itemId Long
+    name String 
+    svcStart Long
+    type String
+}
+
+entity Rulez {
+    name String required
+    description String
+}
+
+entity VatRate {
+    code String required
+    rate Long
+}
+entity Field {
+	defaultz String
+    editable Boolean
+    label String
+    mandatory Boolean
+    maxs String
+    mins String
+    multiple Long
+    name String
+    patternz String
+    type String
+
+}
+
+
+entity Page {
+	number Long
+    predicates String
+    protectionLevel String
+    quote String
+    title String
+}
+
+relationship OneToMany {
+   Product{token} to Token{token(code) required} ,
+   Product{vatRate} to VatRate{vatRate(code) required},
+   Product{page} to Page{page(code) required},
+   Product{rulez} to Rulez{rulez(code) required} 
+}
+
+
+
+relationship OneToMany {
+   Field{page} to Page{order(code) required} ,
+   Category{product} to Product{category(name)}
+}
+
+service Product, Rulez, Field, Page with serviceClass
+paginate Product, Field, Page with pagination
+microservice Product, Field, Category, Page with product
+
+
+/**
+ * Entities for Basket microservice
+ */
+
+
+// Basket
+entity Basket {
+    basketId String required
+    totalPrice BigDecimal required
+    txns String
+    vatAnalysis String
+}
+
+entity BasketEntry {
+    basketId String
+    canEdit Boolean
+    prodictId Long
+    quantity Long
+    refundable Boolean
+    removeable Boolean
+    totalPrice BigDecimal required
+    transactionId String
+    unitPrice BigDecimal
+    vatCode String
+    vatElement String	
+}
+
+entity VatAnalysis {
+    vatCode String
+    vatElement BigDecimal
+}
+
+relationship OneToMany {
+    Basket{basketEntry} to BasketEntry{basket(basketId) required},
+   Basket{vatAnalysis} to VatAnalysis{basket(basketId)}
+}
+
+service Basket, BasketEntry with serviceClass
+paginate Basket, BasketEntry with pagination
+microservice Basket, BasketEntry with basket
+
+
+
+/**
+ * Deployments
+ */
+
+deployment {
+  deploymentType kubernetes
+  appsFolders [branch, basket, product]
+  dockerRepositoryName "image.polarpoint.io"
+  serviceDiscoveryType no
+  istio true
+  kubernetesServiceType Ingress
+  kubernetesNamespace dev-hih-01
+  ingressDomain "demo.polarpoint.io"
+}
