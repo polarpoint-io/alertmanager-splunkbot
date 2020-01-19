@@ -1,0 +1,32 @@
+{
+  "hahApp": {
+    "productPage": {
+      "home": {
+        "title": "Pages",
+        "createLabel": "Créer un nouveau Page",
+        "createOrEditLabel": "Créer ou éditer un Page",
+        "notFound": "Aucun Page trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Page {{ id }} ?"
+      },
+      "detail": {
+        "title": "Page"
+      },
+      "number": "Number",
+      "predicates": "Predicates",
+      "protectionLevel": "Protection Level",
+      "quote": "Quote",
+      "title": "Title",
+      "page": "Page",
+      "order": "Order"
+    }
+  },
+  "productApp": {
+    "productPage": {
+      "created": "Un nouveau Page a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Page avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Page avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

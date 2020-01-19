@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Page.
+    -->
+    <changeSet id="20200119001619-1" author="jhipster">
+        <createTable tableName="page">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="number" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="predicates" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="protection_level" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="quote" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="page_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="order_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200119001619-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200119001619-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/page.csv"
+                  separator=";"
+                  tableName="page">
+            <column name="id" type="numeric"/>
+            <column name="number" type="numeric"/>
+            <column name="predicates" type="string"/>
+            <column name="protection_level" type="string"/>
+            <column name="quote" type="string"/>
+            <column name="title" type="string"/>
+            <column name="page_id" type="numeric"/>
+            <column name="order_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

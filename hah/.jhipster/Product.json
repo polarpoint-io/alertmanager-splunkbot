@@ -1,0 +1,90 @@
+{
+    "name": "Product",
+    "fields": [
+        {
+            "fieldName": "additionalReceipts",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "client",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vatCode",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "token",
+            "otherEntityRelationshipName": "token",
+            "relationshipName": "token"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "vatRate",
+            "otherEntityRelationshipName": "vatRate",
+            "relationshipName": "vatRate"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "page",
+            "otherEntityRelationshipName": "page",
+            "relationshipName": "page"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "rulez",
+            "otherEntityRelationshipName": "rulez",
+            "relationshipName": "rulez"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "category",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200119001614",
+    "javadoc": "Entities for product Catalogue microservice",
+    "entityTableName": "product",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "product"
+    ],
+    "microserviceName": "product"
+}

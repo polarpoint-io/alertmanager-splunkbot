@@ -1,0 +1,41 @@
+{
+    "name": "Category",
+    "fields": [
+        {
+            "fieldName": "deviceRestrictions",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "category",
+            "relationshipName": "product"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "subscriptionGroup",
+            "otherEntityRelationshipName": "subscriptionGroup",
+            "relationshipName": "subscriptionGroup",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200119001613",
+    "entityTableName": "category",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "product"
+    ],
+    "microserviceName": "product"
+}

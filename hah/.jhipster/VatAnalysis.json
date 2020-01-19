@@ -1,0 +1,35 @@
+{
+    "name": "VatAnalysis",
+    "fields": [
+        {
+            "fieldName": "vatCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vatElement",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "basket",
+            "otherEntityRelationshipName": "vatAnalysis",
+            "relationshipName": "basket",
+            "otherEntityField": "basketId"
+        }
+    ],
+    "changelogDate": "20200119001622",
+    "entityTableName": "vat_analysis",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "basket"
+    ]
+}

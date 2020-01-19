@@ -1,0 +1,37 @@
+{
+  "hahApp": {
+    "productProduct": {
+      "home": {
+        "title": "Products",
+        "createLabel": "Créer un nouveau Product",
+        "createOrEditLabel": "Créer ou éditer un Product",
+        "notFound": "Aucun Product trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Product {{ id }} ?"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "additionalReceipts": "Additional Receipts",
+      "client": "Client",
+      "name": "Name",
+      "description": "Description",
+      "paymentType": "Payment Type",
+      "type": "Type",
+      "vatCode": "Vat Code",
+      "token": "Token",
+      "vatRate": "Vat Rate",
+      "page": "Page",
+      "rulez": "Rulez",
+      "category": "Category"
+    }
+  },
+  "productApp": {
+    "productProduct": {
+      "created": "Un nouveau Product a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Product avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Product avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

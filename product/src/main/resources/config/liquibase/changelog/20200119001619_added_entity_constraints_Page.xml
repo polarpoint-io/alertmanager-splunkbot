@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Page.
+    -->
+    <changeSet id="20200119001619-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="page_id"
+                                 baseTableName="page"
+                                 constraintName="fk_page_page_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+        <addForeignKeyConstraint baseColumnNames="order_id"
+                                 baseTableName="page"
+                                 constraintName="fk_page_order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="field"/>
+
+    </changeSet>
+</databaseChangeLog>

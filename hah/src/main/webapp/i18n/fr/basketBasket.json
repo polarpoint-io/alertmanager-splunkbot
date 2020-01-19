@@ -1,0 +1,31 @@
+{
+  "hahApp": {
+    "basketBasket": {
+      "home": {
+        "title": "Baskets",
+        "createLabel": "Créer un nouveau Basket",
+        "createOrEditLabel": "Créer ou éditer un Basket",
+        "notFound": "Aucun Basket trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Basket {{ id }} ?"
+      },
+      "detail": {
+        "title": "Basket"
+      },
+      "basketId": "Basket Id",
+      "totalPrice": "Total Price",
+      "txns": "Txns",
+      "vatAnalysis": "Vat Analysis",
+      "basketEntry": "Basket Entry",
+      "vatAnalysis": "Vat Analysis"
+    }
+  },
+  "basketApp": {
+    "basketBasket": {
+      "created": "Un nouveau Basket a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Basket avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Basket avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+    "name": "Page",
+    "fields": [
+        {
+            "fieldName": "number",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "predicates",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "protectionLevel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "page",
+            "relationshipValidateRules": "required",
+            "relationshipName": "page",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "field",
+            "otherEntityRelationshipName": "page",
+            "relationshipValidateRules": "required",
+            "relationshipName": "order",
+            "otherEntityField": "code"
+        }
+    ],
+    "changelogDate": "20200119001619",
+    "entityTableName": "page",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "product"
+    ],
+    "microserviceName": "product"
+}

@@ -1,0 +1,24 @@
+{
+  "hahApp": {
+    "vatAnalysis": {
+      "home": {
+        "title": "VatAnalyses",
+        "createLabel": "Créer un nouveau Vat Analysis",
+        "createOrEditLabel": "Créer ou éditer un Vat Analysis",
+        "notFound": "Aucun Vat Analysis trouvé"
+      },
+      "created": "Un nouveau Vat Analysis a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Vat Analysis avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Vat Analysis avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Vat Analysis {{ id }} ?"
+      },
+      "detail": {
+        "title": "Vat Analysis"
+      },
+      "vatCode": "Vat Code",
+      "vatElement": "Vat Element",
+      "basket": "Basket"
+    }
+  }
+}

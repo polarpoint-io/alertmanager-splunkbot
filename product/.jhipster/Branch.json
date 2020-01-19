@@ -1,0 +1,49 @@
+{
+    "name": "Branch",
+    "fields": [
+        {
+            "fieldName": "branchAddress",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fad",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "subscriptionGroup",
+            "otherEntityRelationshipName": "subscriptionGroup",
+            "relationshipName": "subscriptionGroup",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200119001611",
+    "javadoc": "Entities for Gateway",
+    "entityTableName": "branch",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "product"
+    ]
+}

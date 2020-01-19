@@ -1,0 +1,24 @@
+{
+  "hahApp": {
+    "vatRate": {
+      "home": {
+        "title": "VatRates",
+        "createLabel": "Créer un nouveau Vat Rate",
+        "createOrEditLabel": "Créer ou éditer un Vat Rate",
+        "notFound": "Aucun Vat Rate trouvé"
+      },
+      "created": "Un nouveau Vat Rate a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Vat Rate avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Vat Rate avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Vat Rate {{ id }} ?"
+      },
+      "detail": {
+        "title": "Vat Rate"
+      },
+      "code": "Code",
+      "rate": "Rate",
+      "vatRate": "Vat Rate"
+    }
+  }
+}

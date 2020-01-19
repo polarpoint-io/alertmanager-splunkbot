@@ -1,0 +1,24 @@
+{
+  "hahApp": {
+    "rulez": {
+      "home": {
+        "title": "Rulezs",
+        "createLabel": "Create a new Rulez",
+        "createOrEditLabel": "Create or edit a Rulez",
+        "notFound": "No Rulezs found"
+      },
+      "created": "A new Rulez is created with identifier {{ param }}",
+      "updated": "A Rulez is updated with identifier {{ param }}",
+      "deleted": "A Rulez is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Rulez {{ id }}?"
+      },
+      "detail": {
+        "title": "Rulez"
+      },
+      "name": "Name",
+      "description": "Description",
+      "rulez": "Rulez"
+    }
+  }
+}

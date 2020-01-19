@@ -1,0 +1,39 @@
+{
+    "name": "VatRate",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "rate",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "vatRate",
+            "relationshipValidateRules": "required",
+            "relationshipName": "vatRate",
+            "otherEntityField": "code"
+        }
+    ],
+    "changelogDate": "20200119001617",
+    "entityTableName": "vat_rate",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "product"
+    ]
+}

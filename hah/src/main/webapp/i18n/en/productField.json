@@ -1,0 +1,36 @@
+{
+  "hahApp": {
+    "productField": {
+      "home": {
+        "title": "Fields",
+        "createLabel": "Create a new Field",
+        "createOrEditLabel": "Create or edit a Field",
+        "notFound": "No Fields found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Field {{ id }}?"
+      },
+      "detail": {
+        "title": "Field"
+      },
+      "defaultz": "Defaultz",
+      "editable": "Editable",
+      "label": "Label",
+      "mandatory": "Mandatory",
+      "maxs": "Maxs",
+      "mins": "Mins",
+      "multiple": "Multiple",
+      "name": "Name",
+      "patternz": "Patternz",
+      "type": "Type",
+      "page": "Page"
+    }
+  },
+  "productApp": {
+    "productField": {
+      "created": "A new Field is created with identifier {{ param }}",
+      "updated": "A Field is updated with identifier {{ param }}",
+      "deleted": "A Field is deleted with identifier {{ param }}"
+    }
+  }
+}
