@@ -1,0 +1,39 @@
+{
+    "name": "Rulez",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "rulez",
+            "relationshipValidateRules": "required",
+            "relationshipName": "rulez",
+            "otherEntityField": "code"
+        }
+    ],
+    "changelogDate": "20200119001616",
+    "entityTableName": "rulez",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "product"
+    ]
+}

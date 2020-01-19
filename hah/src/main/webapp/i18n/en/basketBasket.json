@@ -1,0 +1,31 @@
+{
+  "hahApp": {
+    "basketBasket": {
+      "home": {
+        "title": "Baskets",
+        "createLabel": "Create a new Basket",
+        "createOrEditLabel": "Create or edit a Basket",
+        "notFound": "No Baskets found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Basket {{ id }}?"
+      },
+      "detail": {
+        "title": "Basket"
+      },
+      "basketId": "Basket Id",
+      "totalPrice": "Total Price",
+      "txns": "Txns",
+      "vatAnalysis": "Vat Analysis",
+      "basketEntry": "Basket Entry",
+      "vatAnalysis": "Vat Analysis"
+    }
+  },
+  "basketApp": {
+    "basketBasket": {
+      "created": "A new Basket is created with identifier {{ param }}",
+      "updated": "A Basket is updated with identifier {{ param }}",
+      "deleted": "A Basket is deleted with identifier {{ param }}"
+    }
+  }
+}

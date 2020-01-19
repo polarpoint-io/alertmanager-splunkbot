@@ -1,0 +1,67 @@
+{
+    "name": "Field",
+    "fields": [
+        {
+            "fieldName": "defaultz",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "editable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "label",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mandatory",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "maxs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mins",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "multiple",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "patternz",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "page",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "page"
+        }
+    ],
+    "changelogDate": "20200119001618",
+    "entityTableName": "field",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "product"
+    ],
+    "microserviceName": "product"
+}

@@ -1,0 +1,56 @@
+{
+    "name": "Basket",
+    "fields": [
+        {
+            "fieldName": "basketId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "totalPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "txns",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vatAnalysis",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "basketEntry",
+            "otherEntityRelationshipName": "basket",
+            "relationshipName": "basketEntry"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "vatAnalysis",
+            "otherEntityRelationshipName": "basket",
+            "relationshipName": "vatAnalysis"
+        }
+    ],
+    "changelogDate": "20200119001620",
+    "javadoc": "Entities for Basket microservice",
+    "entityTableName": "basket",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "basket"
+    ],
+    "microserviceName": "basket"
+}

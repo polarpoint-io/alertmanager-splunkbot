@@ -1,0 +1,32 @@
+{
+  "hahApp": {
+    "productPage": {
+      "home": {
+        "title": "Pages",
+        "createLabel": "Create a new Page",
+        "createOrEditLabel": "Create or edit a Page",
+        "notFound": "No Pages found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Page {{ id }}?"
+      },
+      "detail": {
+        "title": "Page"
+      },
+      "number": "Number",
+      "predicates": "Predicates",
+      "protectionLevel": "Protection Level",
+      "quote": "Quote",
+      "title": "Title",
+      "page": "Page",
+      "order": "Order"
+    }
+  },
+  "productApp": {
+    "productPage": {
+      "created": "A new Page is created with identifier {{ param }}",
+      "updated": "A Page is updated with identifier {{ param }}",
+      "deleted": "A Page is deleted with identifier {{ param }}"
+    }
+  }
+}

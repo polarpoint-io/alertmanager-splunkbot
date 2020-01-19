@@ -1,0 +1,24 @@
+{
+  "hahApp": {
+    "subscriptionGroup": {
+      "home": {
+        "title": "SubscriptionGroups",
+        "createLabel": "Créer un nouveau Subscription Group",
+        "createOrEditLabel": "Créer ou éditer un Subscription Group",
+        "notFound": "Aucun Subscription Group trouvé"
+      },
+      "created": "Un nouveau Subscription Group a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Subscription Group avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Subscription Group avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Subscription Group {{ id }} ?"
+      },
+      "detail": {
+        "title": "Subscription Group"
+      },
+      "name": "Name",
+      "subscriptionGroup": "Subscription Group",
+      "subscriptionGroup": "Subscription Group"
+    }
+  }
+}

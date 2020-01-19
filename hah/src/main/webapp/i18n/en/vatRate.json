@@ -1,0 +1,24 @@
+{
+  "hahApp": {
+    "vatRate": {
+      "home": {
+        "title": "Vat Rates",
+        "createLabel": "Create a new Vat Rate",
+        "createOrEditLabel": "Create or edit a Vat Rate",
+        "notFound": "No Vat Rates found"
+      },
+      "created": "A new Vat Rate is created with identifier {{ param }}",
+      "updated": "A Vat Rate is updated with identifier {{ param }}",
+      "deleted": "A Vat Rate is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vat Rate {{ id }}?"
+      },
+      "detail": {
+        "title": "Vat Rate"
+      },
+      "code": "Code",
+      "rate": "Rate",
+      "vatRate": "Vat Rate"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+    "name": "SubscriptionGroup",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "subscriptionGroup",
+            "relationshipValidateRules": "required",
+            "relationshipName": "subscriptionGroup"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "branch",
+            "otherEntityRelationshipName": "subscriptionGroup",
+            "relationshipValidateRules": "required",
+            "relationshipName": "subscriptionGroup"
+        }
+    ],
+    "changelogDate": "20200119001612",
+    "entityTableName": "subscription_group",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "product"
+    ]
+}

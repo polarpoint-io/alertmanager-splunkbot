@@ -1,0 +1,25 @@
+{
+  "hahApp": {
+    "branch": {
+      "home": {
+        "title": "Branches",
+        "createLabel": "Create a new Branch",
+        "createOrEditLabel": "Create or edit a Branch",
+        "notFound": "No Branches found"
+      },
+      "created": "A new Branch is created with identifier {{ param }}",
+      "updated": "A Branch is updated with identifier {{ param }}",
+      "deleted": "A Branch is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Branch {{ id }}?"
+      },
+      "detail": {
+        "title": "Branch"
+      },
+      "branchAddress": "Branch Address",
+      "fad": "Fad",
+      "name": "Name",
+      "subscriptionGroup": "Subscription Group"
+    }
+  }
+}

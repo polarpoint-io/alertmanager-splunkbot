@@ -1,0 +1,22 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "kubernetes",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": [
+      "branch",
+      "basket",
+      "product"
+    ],
+    "clusteredDbApps": [],
+    "consoleOptions": [],
+    "serviceDiscoveryType": false,
+    "dockerRepositoryName": "image.polarpoint.io",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "dev-hih-01",
+    "kubernetesServiceType": "Ingress",
+    "ingressDomain": "demo.polarpoint.io",
+    "istio": true
+  }
+}

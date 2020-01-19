@@ -1,0 +1,76 @@
+{
+    "name": "BasketEntry",
+    "fields": [
+        {
+            "fieldName": "basketId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "canEdit",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "prodictId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "refundable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "removeable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "totalPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "transactionId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "vatCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vatElement",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "basket",
+            "otherEntityRelationshipName": "basketEntry",
+            "relationshipValidateRules": "required",
+            "relationshipName": "basket",
+            "otherEntityField": "basketId"
+        }
+    ],
+    "changelogDate": "20200119001621",
+    "entityTableName": "basket_entry",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hah",
+        "basket"
+    ],
+    "microserviceName": "basket"
+}

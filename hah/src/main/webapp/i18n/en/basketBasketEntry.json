@@ -1,0 +1,37 @@
+{
+  "hahApp": {
+    "basketBasketEntry": {
+      "home": {
+        "title": "Basket Entries",
+        "createLabel": "Create a new Basket Entry",
+        "createOrEditLabel": "Create or edit a Basket Entry",
+        "notFound": "No Basket Entries found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Basket Entry {{ id }}?"
+      },
+      "detail": {
+        "title": "Basket Entry"
+      },
+      "basketId": "Basket Id",
+      "canEdit": "Can Edit",
+      "prodictId": "Prodict Id",
+      "quantity": "Quantity",
+      "refundable": "Refundable",
+      "removeable": "Removeable",
+      "totalPrice": "Total Price",
+      "transactionId": "Transaction Id",
+      "unitPrice": "Unit Price",
+      "vatCode": "Vat Code",
+      "vatElement": "Vat Element",
+      "basket": "Basket"
+    }
+  },
+  "basketApp": {
+    "basketBasketEntry": {
+      "created": "A new Basket Entry is created with identifier {{ param }}",
+      "updated": "A Basket Entry is updated with identifier {{ param }}",
+      "deleted": "A Basket Entry is deleted with identifier {{ param }}"
+    }
+  }
+}
